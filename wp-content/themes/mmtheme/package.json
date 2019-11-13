@@ -1,0 +1,42 @@
+{
+  "name": "mmtheme",
+  "version": "1.0.0",
+  "description": "Mates Marketing Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Keywords"
+  ],
+  "author": "Oleg Kovalyov",
+  "license": "ISC",
+  "devDependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "browser-sync": "^2.18.13",
+    "es6-promise": "^4.1.1",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-jsxhint": "0.0.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-tinypng-nokey": "^1.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "jquery-tabs": "^0.5.1",
+    "jshint": "^2.9.5"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-datepicker": "^1.7.1",
+    "jquery": "^3.2.1",
+    "popper": "^1.0.1"
+  }
+}
