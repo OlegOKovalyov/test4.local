@@ -265,3 +265,18 @@
 		}
 	}
 }
+
+// Sign In
+.site-main .entry-content {
+	p.login-error, p.login-info {
+		color: $secondary;
+		font-size: 14px;
+		line-height: 16px;
+		font-style: italic;
+		margin-bottom: 10px;
+	}
+
+	p.login-info {
+		color: $success;
+	}
+}

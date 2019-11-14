@@ -50,12 +50,12 @@
                 </div><!-- .site-branding -->
                 <div class="site-login">
                     <div class="site-login-wrap">
-                        <a href="#"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                        <a href="/member-login/"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
                         <button type="button" class="btn btn-primary contact-me">Contact Me</button>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div><!-- .row -->
+        </div><!-- .container -->
 
 		<nav id="site-navigation" class="main-navigation">
             <div class="container">
@@ -79,9 +79,11 @@
                             </div>
                         </form>
                     </div>
-                </div>
-            </div>
+                </div><!-- .row -->
+            </div><!-- .container -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+        <div class="container">
+            <div class="row d-block">

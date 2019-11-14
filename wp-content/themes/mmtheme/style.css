@@ -10834,6 +10834,16 @@ a {
     -webkit-transition: color .3s;
     transition: color .3s; }
 
+.site-main .entry-content p.login-error, .site-main .entry-content p.login-info {
+  color: #ee4400;
+  font-size: 14px;
+  line-height: 16px;
+  font-style: italic;
+  margin-bottom: 10px; }
+
+.site-main .entry-content p.login-info {
+  color: #28a745; }
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
