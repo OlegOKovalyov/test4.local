@@ -27,7 +27,7 @@ jQuery(function($) {
 
             // remove loader
             $self.removeClass('bmp-loader');
-        });
+        }); // $.post()
     }); // on()
 
     /**
@@ -57,6 +57,6 @@ jQuery(function($) {
 
             // remove loader
             $self.removeClass('bmp-loader');
-        });
-    });
+        }); // $.post()
+    }); // on()
 });
