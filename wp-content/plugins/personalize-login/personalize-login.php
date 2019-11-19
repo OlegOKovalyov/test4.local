@@ -25,6 +25,7 @@ class Personalize_Login_Plugin {
         add_shortcode( 'custom-register-form', array( $this, 'render_register_form' ) );
         add_action( 'login_form_register', array( $this, 'redirect_to_custom_register' ) );
         add_action( 'login_form_register', array( $this, 'do_register_user' ) );
+        add_shortcode( 'account-info', array( $this, 'get_account_info' ) );
     }
 
     /**
@@ -143,6 +144,39 @@ class Personalize_Login_Plugin {
             return __( 'You are already signed in.', 'personalize-login' );
         } elseif ( ! get_option( 'users_can_register' ) ) {
             return __( 'Registering new users is currently not allowed.', 'personalize-login' );
+        } else {
+            return $this->get_template_html( 'register_form', $attributes );
+        }
+    }
+
+    /**
+     * A shortcode for getting the logged user info.
+     *
+     * @param  array   $attributes  Shortcode attributes.
+     * @param  string  $content     The text content for shortcode. Not used.
+     *
+     * @return string  The shortcode output
+     */
+    public function get_account_info( $attributes, $content = null ) {
+        // Parse shortcode attributes
+        $default_attributes = array( 'show_title' => false );
+        $attributes = shortcode_atts( $default_attributes, $attributes );
+
+        // Retrieve possible errors from request parameters
+        $attributes['errors'] = array();
+        if ( isset( $_REQUEST['register-errors'] ) ) {
+            $error_codes = explode( ',', $_REQUEST['register-errors'] );
+
+            foreach ( $error_codes as $error_code ) {
+                $attributes['errors'] []= $this->get_error_message( $error_code );
+            }
+        }
+
+        if ( is_user_logged_in() ) {
+            $user = wp_get_current_user();
+            $output = 'Hello, <h3>' . $user->display_name . '!</h3> You are SIGNED IN!';
+            $output .= ' Today is ' . date('j F, Y g:i a') . ' (GMT)';
+            return __( $output, 'personalize-login' );
         } else {
             return $this->get_template_html( 'register_form', $attributes );
         }
@@ -370,7 +404,7 @@ class Personalize_Login_Plugin {
 
         // Generate the password so that the subscriber will have to check email...
 //        $password = wp_generate_password( 12, false );
-        $password = '123456';
+        $password = '123456'; // For localhost when email not working
 
         $user_data = array(
             'user_login'    => $email,
@@ -382,7 +416,8 @@ class Personalize_Login_Plugin {
         );
 
         $user_id = wp_insert_user( $user_data );
-        wp_new_user_notification( $user_id, $password );
+//        wp_new_user_notification( $user_id, $password );
+        wp_new_user_notification( $user_id, null, 'user' );
 
         return $user_id;
     }

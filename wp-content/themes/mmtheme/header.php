@@ -31,17 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="site-branding">
-                    <?php
-                    the_custom_logo();
-                    if ( is_front_page() && is_home() ) :
-                        ?>
-                        <!--				<h1 class="site-title"><a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home">--><?php //bloginfo( 'name' ); ?><!--</a></h1>-->
-                    <?php
-                    else :
-                        ?>
-                        <!--				<p class="site-title"><a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home">--><?php //bloginfo( 'name' ); ?><!--</a></p>-->
-                    <?php
-                    endif;
+                    <?php the_custom_logo();
                     $mmtheme_description = get_bloginfo( 'description', 'display' );
                     if ( $mmtheme_description || is_customize_preview() ) :
                         ?>
@@ -50,22 +40,27 @@
                 </div><!-- .site-branding -->
                 <div class="site-login">
                     <div class="site-login-wrap">
-                        <a href="/member-login/"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
-                        <button type="button" class="btn btn-primary contact-me">Contact Me</button>
+                        <a href="<?php echo site_url(); ?>/member-login/"><i class="fa fa-key" aria-hidden="true"></i> Login</a>
+                        <button type="button" class="btn btn-primary btn-sm contact-me">Contact Me</button>
                     </div>
                 </div>
             </div><!-- .row -->
         </div><!-- .container -->
 
-		<nav id="site-navigation" class="main-navigation">
+		<nav id="site-navigation" class="main-navigation navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <div class="row">
                     <div class="main-menu">
-                        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mmtheme' ); ?></button>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                         <?php
                         wp_nav_menu( array(
                             'theme_location' => 'menu-1',
                             'menu_id'        => 'primary-menu',
+                            'container'      => 'div',
+                            'container_class'=> 'collapse navbar-collapse',
+                            'container_id'   => 'navbarSupportedContent',
                         ) );
                         ?>
                     </div>
@@ -86,4 +81,4 @@
 
 	<div id="content" class="site-content">
         <div class="container">
-            <div class="row d-block">
+            <div class="row">

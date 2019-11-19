@@ -1,0 +1,44 @@
+a.bmp-bookmark-link span {
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*background-image: url('../images/stars16.png');*/
+    /*background-position: left top;*/
+    /*width: 16px;*/
+    /*height: 16px;*/
+}
+
+a.bmp-bookmark-link span.bmp-bookmark {
+    /*background-position: 0 32px;*/
+}
+
+.bmp-loader:after {
+    content: '';
+    background: url('../images/loading.gif') no-repeat;
+    height: 16px;
+    width: 16px;
+    padding: 0 16px;
+    margin-left: 5px;
+}
+
+a.bmp-remove-bookmark {
+    /*color: #B30000;*/
+    /*background: #E0E0E0;*/
+    /*border-radius: 500px;*/
+    /*padding: 1px 4px;*/
+    /*font-size: 9px;*/
+}
+
+a.bmp-bookmark-link span {
+    /*color: #282828;*/
+    /*opacity: 0.5;*/
+}
+
+a.bmp-bookmark-link .fa-bookmark {
+    color: #eb3c00;
+    opacity: 1;
+}
+
+a.bmp-bookmark-link .bmp-not-bookmark,
+a.bmp-bookmark-link .bmp-bookmark {
+    font-size: 13px;
+}

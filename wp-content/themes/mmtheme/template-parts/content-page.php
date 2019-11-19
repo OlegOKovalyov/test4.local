@@ -49,4 +49,7 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+    <?php if ( is_page('member-account')) : ?>
+        <a href="<?php echo wp_logout_url( home_url() ); ?>" title="Log Out">Log Out</a>
+    <?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
